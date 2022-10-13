@@ -1,0 +1,38 @@
+Description: Disable time tests
+ Disable d3-timer based tests (also disabled in node-d3-timer)
+--- a/test/transition/style-test.js
++++ b/test/transition/style-test.js
+@@ -127,6 +127,7 @@
+   });
+ });
+ 
++/*
+ tape("transition.style(name, constant) is a noop if the string-coerced value matches the current value on tween initialization", function(test) {
+   var root = jsdom().documentElement,
+       selection = d3_selection.select(root).style("opacity", 1),
+@@ -192,6 +193,7 @@
+     test.end();
+   }, 125);
+ });
++*/
+ 
+ tape("transition.style(name, value) interpolates strings", function(test) {
+   var root = jsdom().documentElement,
+--- a/test/transition/ease-test.js
++++ b/test/transition/ease-test.js
+@@ -44,6 +44,7 @@
+   test.end();
+ });
+ 
++/*
+ tape("transition.ease(ease) passes the easing function the normalized time in [0, 1]", function(test) {
+   var root = jsdom().documentElement,
+       actual,
+@@ -56,6 +57,7 @@
+     test.end();
+   }, 100);
+ });
++*/
+ 
+ tape("transition.ease(ease) does not invoke the easing function on the last frame", function(test) {
+   var root = jsdom().documentElement,

@@ -1,0 +1,1 @@
+tape `find test/ -name '*-test.js'|grep -v test/transition`
