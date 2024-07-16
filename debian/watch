@@ -1,5 +1,8 @@
 version=4
 opts=\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-d3-transition-$1.tar.gz/ \
- https://github.com/d3/d3-transition/tags .*/archive/v?([\d\.]+).tar.gz
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-d3-transition-$1/ \
+ https://github.com/d3/d3-transition/tags?after=v2.0.0-rc1 .*/archive/.*/v?([\d\.]+).tar.gz group
+
+opts="searchmode=plain,component=types-d3-transition,ctype=nodejs,pgpmode=none,filenamemangle=s/^.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-types-d3-transition-$1/" \
+ https://registry.npmjs.org/@types/d3-transition https://registry.npmjs.org/@types/d3-transition/-/d3-transition-([\d\.]+)@ARCHIVE_EXT@ group

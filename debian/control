@@ -1,9 +1,8 @@
 Source: node-d3-transition
+Section: javascript
+Priority: optional
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
 Uploaders: Pirate Praveen <praveen@debian.org>
-Section: javascript
-Testsuite: autopkgtest-pkg-nodejs
-Priority: optional
 Build-Depends: debhelper-compat (= 13)
  , dh-sequence-nodejs
  , node-d3-color
@@ -17,22 +16,24 @@ Build-Depends: debhelper-compat (= 13)
  , node-tape <!nocheck>
  , nodejs
  , rollup
-Standards-Version: 4.5.1
+Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/js-team/node-d3-transition
 Vcs-Git: https://salsa.debian.org/js-team/node-d3-transition.git
 Homepage: https://d3js.org/d3-transition/
+Testsuite: autopkgtest-pkg-nodejs
 Rules-Requires-Root: no
 
 Package: node-d3-transition
 Architecture: all
-Depends: ${misc:Depends}
- , node-d3-color
+Depends: node-d3-color
  , node-d3-dispatch
  , node-d3-ease
  , node-d3-interpolate
  , node-d3-selection
  , node-d3-timer
- , nodejs
+ , ${misc:Depends}
+Provides: ${nodejs:Provides}
+Multi-Arch: foreign
 Description: Animated transitions for D3 selections
  A transition is a selection-like interface for animating changes to the DOM.
  Instead of applying changes instantaneously, transitions smoothly interpolate
