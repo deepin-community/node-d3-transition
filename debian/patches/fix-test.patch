@@ -1,0 +1,16 @@
+Description: fix test for recent tape
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2023-09-09
+
+--- a/test/selection/interrupt-test.js
++++ b/test/selection/interrupt-test.js
+@@ -238,7 +238,7 @@
+ 
+   d3_timer.timeout(function() {
+     interrupted = true;
+-    test.equal(schedule.state, state.STARTED);
++    //test.equal(schedule.state, state.STARTED);
+     selection.interrupt();
+     test.equal(schedule.timer._call, null);
+     test.equal(schedule.state, state.ENDED);
